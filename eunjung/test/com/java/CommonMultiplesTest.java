@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class CommonMultiplesTest {
     private final int maxNumber = 10;
     @Test
-    public void testNewCommonMultiple() {
-        CommonMultiples commonMultiples = new CommonMultiples(maxNumber);
-        assertEquals(commonMultiples.getMaxNumber(), maxNumber);
+    public void testNewMultiple() {
+        Multiples multiples = new Multiples(maxNumber);
+        assertEquals(multiples.getMaxNumber(), maxNumber);
     }
 }

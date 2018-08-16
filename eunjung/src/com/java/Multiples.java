@@ -1,8 +1,8 @@
 package com.java;
 
-public class CommonMultiples {
+public class Multiples {
     int maxNumber;
-    public CommonMultiples(int maxNumber) {
+    public Multiples(int maxNumber) {
         this.maxNumber = maxNumber;
     }
     
