@@ -1,7 +1,8 @@
-.recommenders/
-.metadata/
+.recommenders
+.metadata
 RemoteSystemsTempFiles/
-*.metadata/
-*.settings
-*.classpath
-*.project
+*/bin/
+*/.metadata/
+*/.settings
+*/.classpath
+*/.project
