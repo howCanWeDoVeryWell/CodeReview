@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class CommonMultiplesTest {
     private int maxNumber = 10;
     private int startNum = 3;
-    private List<Integer> resultMultiples = Arrays.asList(3, 6, 9); 
     
     @Test
     public void testNewMultiple() {
@@ -21,6 +20,7 @@ class CommonMultiplesTest {
     @Test
     public void testMultipleSet() {
         Multiples multiples = new Multiples(maxNumber);
+        List<Integer> resultMultiples = Arrays.asList(3, 6, 9); 
         assertArrayEquals(resultMultiples.toArray(), multiples.getResultMultipleSet(startNum).toArray());
         
         maxNumber = 20;
