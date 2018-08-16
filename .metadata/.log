@@ -100,3 +100,9 @@ Caused by: java.lang.IllegalStateException: Application does not have an active 
 
 !ENTRY org.eclipse.jface.text 2 0 2018-08-16 23:37:28.990
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-16 23:46:04.220
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-16 23:46:04.230
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
