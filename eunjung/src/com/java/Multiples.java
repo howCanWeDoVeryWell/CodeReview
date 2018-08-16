@@ -1,7 +1,8 @@
 package com.java;
 
 public class Multiples {
-    int maxNumber;
+    private final int maxNumber;
+    
     public Multiples(int maxNumber) {
         this.maxNumber = maxNumber;
     }
