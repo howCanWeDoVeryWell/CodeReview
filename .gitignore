@@ -1,4 +1,6 @@
+.recommenders/
 .metadata/
+RemoteSystemsTempFiles/
 *.metadata/
 *.settings
 *.classpath
