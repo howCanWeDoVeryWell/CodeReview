@@ -19,13 +19,7 @@ public class Multiples {
     }
     
     public int [] getResultMultipleSet(int startNumber) {
-        int setSize = 0;
-        if (startNumber > 0) {
-            setSize = maxNumber / startNumber;
-            if (maxNumber % setSize == 0) {
-                setSize--;
-            }
-        }
+        int setSize = getMultipleSetSize(startNumber);
         int [] resultMultipleSet = new int[setSize];
         
         int multipleNumber = startNumber;
