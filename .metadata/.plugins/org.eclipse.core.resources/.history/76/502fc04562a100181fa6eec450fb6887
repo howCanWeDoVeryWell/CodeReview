@@ -1,0 +1,29 @@
+package homework.operatorExam;
+
+import java.util.Scanner;
+
+/*1. 입력받은 수에 따라 '양수', '음수' '0'을 출력하는 코드를
+삼항연산자를 이용하여 작성하시오
+*/
+public class Ch02_Variable2_1 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("입력하시오 : ");
+		int userInput = scan.nextInt();
+		
+		String result = "";
+		
+		if(userInput == 0) {
+			result = "0";
+		} else {
+			if(userInput > 0) {
+				result = "양수";
+			} else {
+				result = "음수";
+			}
+		}
+		
+//		String result = userInput == 0 ? "0" : (userInput > 0 ? "양수" : "음수");
+		System.out.println(result);
+	}
+}
