@@ -1,31 +1,34 @@
 package com.java;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CommonMultiplesTest {
     private int maxNumber = 10;
     private int startNum = 3;
+    private Multiples multiples = new Multiples(maxNumber);
     
     @Test
     public void testNewMultiple() {
-        Multiples multiples = new Multiples(maxNumber);
         assertEquals(multiples.getMaxNumber(), maxNumber);
     }
     
     @Test
-    public void testMultipleSet() {
-        Multiples multiples = new Multiples(maxNumber);
-        List<Integer> resultMultiples = Arrays.asList(3, 6, 9); 
-        assertArrayEquals(resultMultiples.toArray(), multiples.getResultMultipleSet(startNum).toArray());
+    public void testGetResultMultipleSet() {
+        int [] resultMultiples = new int[] {3, 6, 9}; 
+        assertArrayEquals(resultMultiples, multiples.getResultMultipleSet(startNum));
         
         maxNumber = 20;
-        resultMultiples = Arrays.asList(3, 6, 9, 12, 15, 18);
+        resultMultiples = new int[] {3, 6, 9, 12, 15, 18};
         Multiples multiples2 = new Multiples(maxNumber);
-        assertArrayEquals(resultMultiples.toArray(), multiples2.getResultMultipleSet(startNum).toArray());
+        assertArrayEquals(resultMultiples, multiples2.getResultMultipleSet(startNum));
+    }
+    
+    @Test
+    public void testGetSumOfMultipleOfTwoNumbers() {
+        int resultNumber = multiples.getSumOfMultipleOfTwoNumbers(0, 1);
+        assertEquals(resultNumber, 45);
+        
+        resultNumber = multiples.getSumOfMultipleOfTwoNumbers(1, 2);
     }
 }
