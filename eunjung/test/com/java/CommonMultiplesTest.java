@@ -27,8 +27,16 @@ class CommonMultiplesTest {
     @Test
     public void testGetSumOfMultipleOfTwoNumbers() {
         int resultNumber = multiples.getSumOfMultipleOfTwoNumbers(0, 1);
-        assertEquals(resultNumber, 45);
+        assertEquals(45, resultNumber);
         
         resultNumber = multiples.getSumOfMultipleOfTwoNumbers(1, 2);
+        assertEquals(45, resultNumber);
+        
+        resultNumber = multiples.getSumOfMultipleOfTwoNumbers(3, 5);
+        assertEquals(23, resultNumber);
+        
+        multiples.setMaxNumber(1000);
+        resultNumber = multiples.getSumOfMultipleOfTwoNumbers(3, 5);
+        assertEquals(233168, resultNumber);
     }
 }
