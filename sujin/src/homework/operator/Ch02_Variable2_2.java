@@ -3,13 +3,13 @@ package homework.operator;
 import java.util.Scanner;
 
 /*
- * ?…? ¥ë°›ì? ?ˆ˜?˜ ë°±ì˜ ?ë¦? ?´?•˜ë¥? ë²„ë¦¬?Š” ì½”ë“œë¥? ?‘?„±?•˜?‹œ?˜¤
- * 456?…? ¥?‹œ 400ì¶œë ¥
+ * ?ï¿½ï¿½?ï¿½ï¿½ë°›ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ë°±ì˜ ?ï¿½ï¿½ï¿½? ddddddddddd?ï¿½ï¿½?ï¿½ï¿½ï¿½? ë²„ë¦¬?ï¿½ï¿½ ì½”ë“œï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+ * 456?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ 400ì¶œë ¥
  */
 public class Ch02_Variable2_2 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("?…? ¥?•˜?‹œ?˜¤ : ");
+		System.out.print("?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ : ");
 		int userInput = scan.nextInt();
 		
 		int result = (userInput / 100) * 100;
