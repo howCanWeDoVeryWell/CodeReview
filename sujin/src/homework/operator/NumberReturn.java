@@ -1,8 +1,8 @@
-package homework.operator;
+package homework.operatorExam;
 
 import java.util.Scanner;
 
-class UserInputOnlyOneWordChecking {
+class NumberReturnCalculator {
 	
 	void checkOnlyOneWord(Scanner scanner) {
 		while(true) {
@@ -26,13 +26,13 @@ class UserInputOnlyOneWordChecking {
 	}
 }
 
-public class UserInputOnlyOneWord {
+public class NumberReturn {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("한글자를 입력하세요 : ");
 		
-		UserInputOnlyOneWordChecking userInputOnlyWordChecking = new UserInputOnlyOneWordChecking();
-		userInputOnlyWordChecking.checkOnlyOneWord(scanner);
+		NumberReturnCalculator numberReturnCalculator = new NumberReturnCalculator();
+		numberReturnCalculator.checkOnlyOneWord(scanner);
 	}
 }

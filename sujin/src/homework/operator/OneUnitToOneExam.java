@@ -2,7 +2,7 @@ package homework.operator;
 
 import java.util.Scanner;
 
-class ChangingNumberOneUnitToOneReresult {
+class OneUnitToOneCalculator {
 	
 	void doCalculateChangingNumberOneUnitToOne(Scanner scanner) {
 		while(true) {
@@ -29,13 +29,13 @@ class ChangingNumberOneUnitToOneReresult {
 	}
 }
 
-public class ChangingNumberOneUnitToOne {
+public class OneUnitToOneExam {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("100이상의 숫자를 입력하세요 : ");
 		
-		ChangingNumberOneUnitToOneReresult changingNumberOneUnitToOneReresult = new ChangingNumberOneUnitToOneReresult();
-		changingNumberOneUnitToOneReresult.doCalculateChangingNumberOneUnitToOne(scanner);
+		OneUnitToOneCalculator oneUnitToOneCalculator = new OneUnitToOneCalculator();
+		oneUnitToOneCalculator.doCalculateChangingNumberOneUnitToOne(scanner);
 	}
 }

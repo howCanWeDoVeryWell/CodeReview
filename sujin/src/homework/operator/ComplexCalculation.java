@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 class ComplexCalculationResult {
 	private final static int DEFAULT_DIVIDING_NUMBER = 10;
+	private final static int DEFAULT_MULTIPLY_NUMBER = 10;
+	private final static int DEFAULT_PLUS_NUMBER = 10;
 	
 	void CalculateComplexSolving(Scanner scanner) {
 		
@@ -18,7 +20,7 @@ class ComplexCalculationResult {
 				System.out.print("잘못 입력 하셨습니다. 다시 입력해주세요 : ");
 			} else {
 				int stringConvertToInt = Integer.parseInt(userInputNumber);
-				int closingNumberFromTargetNumber = stringConvertToInt / DEFAULT_DIVIDING_NUMBER * 10 + 10;
+				int closingNumberFromTargetNumber = stringConvertToInt / DEFAULT_DIVIDING_NUMBER * DEFAULT_MULTIPLY_NUMBER + DEFAULT_PLUS_NUMBER;
 				
 				int closingNumberFromTargetNumberMinusUserInputNumber = closingNumberFromTargetNumber - stringConvertToInt;
 				System.out.println("10의 배수에서 입력받은 수를 뺀 수는 : " + closingNumberFromTargetNumberMinusUserInputNumber);
