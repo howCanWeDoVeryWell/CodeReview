@@ -2,7 +2,7 @@ package homework.operatorExam;
 
 import java.util.Scanner;
 
-class ChangingValueToLowerOrUpperResult {
+class LowerUpperConversionCalculator {
 	
 	void changeValueToLowerOrUpper(Scanner scanner) {
 		char stringConvertToChar = 0;
@@ -43,18 +43,17 @@ class ChangingValueToLowerOrUpperResult {
 				return; 
 
 			}
-			
 		}
 	}
 }
 
-public class LowerUpperConvertision {
+public class LowerUpperConversion {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("값을 입력 하세요 ");
 		
-		ChangingValueToLowerOrUpperResult changingValueToLowerOrUpperResult = new ChangingValueToLowerOrUpperResult();
-		changingValueToLowerOrUpperResult.changeValueToLowerOrUpper(scanner);
+		LowerUpperConversionCalculator lowerUpperConversionCalculator = new LowerUpperConversionCalculator();
+		lowerUpperConversionCalculator.changeValueToLowerOrUpper(scanner);
 	}
 }
