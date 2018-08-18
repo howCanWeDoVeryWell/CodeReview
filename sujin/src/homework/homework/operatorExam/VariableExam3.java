@@ -28,7 +28,7 @@ class ComplexCalculationResult {
 	}
 }
 
-public class ComplexCalculation {
+public class VariableExam3 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

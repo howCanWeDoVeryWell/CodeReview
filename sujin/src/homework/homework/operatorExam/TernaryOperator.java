@@ -2,7 +2,7 @@ package src.homework.operator;
 
 import java.util.Scanner;
 
-class CalculatingNumberAsTernaryOperatorResult {
+class TernaryOperatorCalculator {
 
 	void doCalculate(Scanner scanner) {
 		while(true) {
@@ -31,12 +31,12 @@ class CalculatingNumberAsTernaryOperatorResult {
 	}
 }
 
-public class TernaryOperatorCalculator {
+public class TernaryOperator {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("숫자를 입력 하세요 : ");
 		
-		CalculatingNumberAsTernaryOperatorResult calculatingNumber = new CalculatingNumberAsTernaryOperatorResult();
-		calculatingNumber.doCalculate(scanner);
+		TernaryOperatorCalculator ternaryOperatorCalculator = new TernaryOperatorCalculator();
+		ternaryOperatorCalculator.doCalculate(scanner);
 	}
 }

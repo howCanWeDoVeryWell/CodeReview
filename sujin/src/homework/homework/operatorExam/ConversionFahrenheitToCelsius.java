@@ -2,7 +2,7 @@ package homework.operatorExam;
 
 import java.util.Scanner;
 
-class ConvertingFahrenheitToCelsiusResult {
+class ConversionFahrenheitToCelsiusCalculator {
 	void CalculateFahrenheitToCelsius(Scanner scanner) {
 //		5.0 / 9 * (f - 32);
 		while(true) {
@@ -31,7 +31,7 @@ public class ConversionFahrenheitToCelsius {
 		System.out.println("섭씨에서 화씨로 변환하는 코드를 만들어 볼 것이다.");
 		System.out.print("값을 입력 하세요 ");
 		
-		ConvertingFahrenheitToCelsiusResult convertingFahrenheitToCelsiusResult = new ConvertingFahrenheitToCelsiusResult();
-		convertingFahrenheitToCelsiusResult.CalculateFahrenheitToCelsius(scanner);
+		ConversionFahrenheitToCelsiusCalculator conversionFahrenheitToCelsiusCalculator = new ConversionFahrenheitToCelsiusCalculator();
+		conversionFahrenheitToCelsiusCalculator.CalculateFahrenheitToCelsius(scanner);
 	}
 }

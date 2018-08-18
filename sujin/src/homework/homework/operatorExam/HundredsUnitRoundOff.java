@@ -1,8 +1,8 @@
-package homework.operatorExam;
+package operator;
 
 import java.util.Scanner;
 
-class CalculatingHundredsUnitRoundOffResult {
+class HundredsUnitRoundOffCalculator {
 	
 	void doCalculateChangingNumberOneUnitToOne(Scanner scanner) {
 		while(true) {
@@ -29,14 +29,14 @@ class CalculatingHundredsUnitRoundOffResult {
 	}
 }
 
-public class CalculatingHundredsUnitRoundOff {
+public class HundredsUnitRoundOff {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("100의 자리 이상을 입력하면 백의 자리 이후 숫자를 0으로 만들 것이다.");
 		System.out.print("100 이상의 숫자를 입력하세요 : ");
 		
-		CalculatingHundredsUnitRoundOffResult calculatingHundredsUnitRoundOffResult = new CalculatingHundredsUnitRoundOffResult();
-		calculatingHundredsUnitRoundOffResult.doCalculateChangingNumberOneUnitToOne(scanner);
+		HundredsUnitRoundOffCalculator hundredsUnitRoundOffCalculator = new HundredsUnitRoundOffCalculator();
+		hundredsUnitRoundOffCalculator.doCalculateChangingNumberOneUnitToOne(scanner);
 	}
 }
