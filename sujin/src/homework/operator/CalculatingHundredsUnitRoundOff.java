@@ -3,13 +3,13 @@ package homework.operator;
 import java.util.Scanner;
 
 /*
- * 4. ?…? ¥ë°›ì? ?ˆ˜?˜ ?¼?˜?ë¦¬ë?? 1ë¡? ë°”ê¾¸?Š” ì½”ë“œë¥? ?‘?„±?•˜?‹œ?˜¤
- * 777?…? ¥?‹œ 771ì¶œë ¥
+ * 4. ?ï¿½ï¿½?ï¿½ï¿½ë°›ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ë¦¬ï¿½?? 1ï¿½? ë°”ê¾¸?ï¿½ï¿½ ì½”ë“œï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+ * 777?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ 771ì¶œë ¥
  */
 public class Ch02_Variable2_3 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("?…? ¥?•˜?‹œ?˜¤ : ");
+		System.out.print("?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ : ");
 		int userInput = scan.nextInt();
 		
 		int changingNum = (userInput / 10) * 10 + 1;

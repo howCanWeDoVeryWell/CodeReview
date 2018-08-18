@@ -3,8 +3,8 @@ package homework.operator;
 import java.util.Scanner;
 
 /*
- * 2. ë¬¸ìë¥? ?•œê¸?? ?…? ¥ë°›ì•„ ?ˆ«??¼?•Œë§? 
- * trueë¥? ë¦¬í„´?•˜?Š” ì½”ë“œë¥? ?‘?„±?•˜?‹œ?˜¤
+ * 2. ë¬¸ìï¿½? ?ï¿½ï¿½ï¿½??ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ë°›ì•„ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? 
+ * trueï¿½? ë¦¬í„´?ï¿½ï¿½?ï¿½ï¿½ ì½”ë“œï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
  */
 public class Ch03_Variable3_2 {
 	public void regularExpressionCheck(String userInput) {
@@ -14,24 +14,24 @@ public class Ch03_Variable3_2 {
 			} else {
 				Boolean checkPatten = false;
 				checkPatten = userInput.matches("^[0-9]*$");
-				
+			
 				if (checkPatten) {
-					System.out.println("?ˆ«??‹¹");
+					System.out.println("?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½");
 				} else {
-					System.out.println("?ˆ«??•„?‹˜");
+					System.out.println("?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½");
 				}
 			}
         } catch (RuntimeException e) {
-            System.err.println("?•œê¸?? ?…? ¥?„ ?•´?•¼?•¨");
+            System.err.println("?ï¿½ï¿½ï¿½??ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½");
         }
 	}
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("?…? ¥?•˜?‹œ?˜¤ : ");
+		System.out.print("?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ : ");
 		String userInput = scan.nextLine();
 		
 		Ch03_Variable3_2 chVariable3 = new Ch03_Variable3_2();
 		chVariable3.regularExpressionCheck(userInput);
 	}
-}
+}C
