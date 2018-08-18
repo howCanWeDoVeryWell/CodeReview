@@ -31,7 +31,7 @@ class TernaryOperatorCalculator {
 	}
 }
 
-public class TernaryOperatorExam {
+public class TernaryOperator {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("숫자를 입력 하세요 : ");

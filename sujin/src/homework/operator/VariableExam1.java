@@ -26,7 +26,7 @@ class NumberReturnCalculator {
 	}
 }
 
-public class NumberReturn {
+public class VariableExam1 {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
