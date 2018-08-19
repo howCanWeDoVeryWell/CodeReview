@@ -1,4 +1,4 @@
-package homework.operatorExam;
+package src.homework.operatorExam;
 
 import java.util.Scanner;
 
