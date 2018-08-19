@@ -1,4 +1,4 @@
-package homework.operatorExam;
+package src.homework.operatorExam;
 
 public class CommonCalculatingExpression {
 	public Boolean doCalculate(String userInput, Boolean isThatWords) {
