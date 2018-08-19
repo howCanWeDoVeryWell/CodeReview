@@ -1,4 +1,4 @@
-package loopExam;
+package src.homework.loopExam;
 
 class LoopExamCalculator {
 	void doCalculator() {
