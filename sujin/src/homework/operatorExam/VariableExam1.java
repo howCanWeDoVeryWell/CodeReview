@@ -1,5 +1,5 @@
 package src.homework.operatorExam;
-
+// 문자를 한글자 입력받아 숫자일 때만 true를 리턴하는 코드를 작성하시오
 import java.util.Scanner;
 
 class NumberReturnCalculator {

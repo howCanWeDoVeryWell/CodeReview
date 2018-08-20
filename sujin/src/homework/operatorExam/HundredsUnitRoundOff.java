@@ -1,5 +1,5 @@
 package src.homework.operatorExam;
-
+// 입력받은 수의 백의 자리 이하를 버리는 코드를 작성 하시오(ex> 456 입력시 400)
 import java.util.Scanner;
 
 class HundredsUnitRoundOffCalculator {

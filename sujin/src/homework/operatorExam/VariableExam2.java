@@ -1,5 +1,5 @@
 package src.homework.operatorExam;
-
+// 입력받은 수의 일의 자리를 1로 바꾸는 코드를 작성하시오
 import java.util.Scanner;
 
 class ChangingNumberOneUnitToOneReresult {

@@ -1,5 +1,5 @@
 package src.homework.operatorExam;
-
+// 입력받은 수보다 크면서 입력 받은 수에 가장 가까운 10의 배수에서 입력 받은 수 뺀 수를 구하시오
 import java.util.Scanner;
 
 class ComplexCalculationResult {

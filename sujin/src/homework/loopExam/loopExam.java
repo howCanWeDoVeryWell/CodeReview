@@ -1,5 +1,5 @@
 package src.homework.loopExam;
-
+// 1 + (1 + 2) + (1 + 2 + 3) + ... 의 결과를 구하시오
 class loopCalculator {
 	void doCalculator() {
 		int totolSum = 0;

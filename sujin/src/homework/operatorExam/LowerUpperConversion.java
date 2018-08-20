@@ -1,5 +1,5 @@
 package src.homework.operatorExam;
-
+// 대문자를 소문자, 소문자를 대문자로 바꾸시오
 import java.util.Scanner;
 
 class LowerUpperConversionCalculator {

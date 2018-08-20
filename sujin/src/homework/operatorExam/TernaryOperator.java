@@ -1,5 +1,5 @@
 package src.homework.operator;
-
+// 입력받은 수에 따라 양수, 음수, 0을 출력하는 코드를 삼항연산자를 이용하여 작성하시오
 import java.util.Scanner;
 
 class TernaryOperatorCalculator {

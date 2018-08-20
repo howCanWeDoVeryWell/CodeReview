@@ -1,5 +1,5 @@
 package src.homework.operatorExam;
-
+// 화씨를 섭씨로 바꾸시오
 import java.util.Scanner;
 
 class ConversionFahrenheitToCelsiusCalculator {
