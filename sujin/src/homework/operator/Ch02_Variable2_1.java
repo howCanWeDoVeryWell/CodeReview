@@ -2,28 +2,28 @@ package homework.operator;
 
 import java.util.Scanner;
 
-/*1. ?ž…? ¥ë°›ì? ?ˆ˜?— ?”°?¼ '?–‘?ˆ˜', '?Œ?ˆ˜' '0'?„ ì¶œë ¥?•˜?Š” ì½”ë“œë¥?
-?‚¼?•­?—°?‚°?žë¥? ?´?š©?•˜?—¬ ?ž‘?„±?•˜?‹œ?˜¤
+/*1. ?ï¿½ï¿½?ï¿½ï¿½ë°›ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ '?ï¿½ï¿½?ï¿½ï¿½', '?ï¿½ï¿½?ï¿½ï¿½' '0'?ï¿½ï¿½ ì¶œë ¥?ï¿½ï¿½?ï¿½ï¿½ ì½”ë“œï¿½
+?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
 */
 public class Ch02_Variable2_1 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("?ž…? ¥?•˜?‹œ?˜¤ : ");
+		System.out.print("?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ : ");
 		int userInput = scan.nextInt();
-		
+
 		String result = "";
-		
+
 		if(userInput == 0) {
 			result = "0";
 		} else {
 			if(userInput > 0) {
-				result = "?–‘?ˆ˜";
+				result = "?ï¿½ï¿½?ï¿½ï¿½";
 			} else {
-				result = "?Œ?ˆ˜";
+				result = "?ï¿½ï¿½?ï¿½ï¿½";
 			}
 		}
-		
-//		String result = userInput == 0 ? "0" : (userInput > 0 ? "?–‘?ˆ˜" : "?Œ?ˆ˜");
+
+//		String result = userInput == 0 ? "0" : (userInput > 0 ? "?ï¿½ï¿½?ï¿½ï¿½" : "?ï¿½ï¿½?ï¿½ï¿½");
 		System.out.println(result);
 	}
 }
