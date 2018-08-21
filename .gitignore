@@ -1,0 +1,10 @@
+.recommenders/
+.metadata/
+RemoteSystemsTempFiles/
+.metadata/
+.settings
+.classpath
+.project
+.DS_Store
+bin/
+out/
