@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 public class Loop2 {
 
-    //방정식
-    public static void equation() {
+    // Equation  : 방정식
+    // 2x + 4y = 10 경우의 수
+    public static void calculateEquation() {
 
         int x = 2;
         int y = 4;
@@ -24,6 +25,7 @@ public class Loop2 {
         System.out.println("count " + count);
     }
 
+    // 입력 받은 수 각각 더하기
     public static void sumEach() {
 
         try {
@@ -54,10 +56,10 @@ public class Loop2 {
 
 
     public static void main(String[] args) {
-        //equation();
-        //sumEach();
-        fibonacci();
-        discrimination();
+        calculateEquation();
+        sumEach();
+        //fibonacci();
+        //discrimination();
 
     }
 

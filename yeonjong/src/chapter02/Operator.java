@@ -5,13 +5,16 @@ import java.util.Scanner;
 
 public class Operator {
 
-    public static void ternary() {
+    // 1. 삼항연산자를 이용하여 음수, 양수, 0 출력하기
+    // TernaryOperation : 삼항 연산
+    public static void tryTernaryOperation () {
 
         int userAnswer = scanUserAnswer();
         String result = userAnswer > 0 ? "양수" : userAnswer < 0 ? "음수" : "0";
         System.out.println(result);
     }
 
+    // 2. 백의자리 이하 버리기
     public static void dumpHundreds() {
 
         int userAnswer = scanUserAnswer();
@@ -19,6 +22,7 @@ public class Operator {
         System.out.println(result);
     }
 
+    // 3. 입력받은 수의 일의 자리를 1로 바꾸기
     public static void changeUnits() {
 
         int userAnswer = scanUserAnswer();
@@ -26,13 +30,13 @@ public class Operator {
         System.out.println(result);
     }
 
+    // 4. 입력받은 수보다 크면서 가장 가까운 10의 배수에서 입력받은 수 빼기
     public static void multiple() {
 
         int userAnswer = scanUserAnswer();
         int result = (userAnswer / 10 * 10 + 10) - userAnswer;
         System.out.println(result);
     }
-
 
 
     public static int scanUserAnswer() {
@@ -63,7 +67,7 @@ public class Operator {
             switch (selectedQuestion) {
 
                 case 1 :
-                    ternary();
+                    tryTernaryOperation();
                     break;
                 case 2 :
                     dumpHundreds();

@@ -8,7 +8,10 @@ import java.util.Scanner;
 
 public class Operator2 {
 
-    public static void fahrenheitToCelsius() {
+    //1. 화씨를 섭씨로 반환하기
+    // Fahrenheit : 화씨
+    // Celsius : 섭씨
+    public static void convertFahrenheitToCelsius() {
 
         try {
             System.out.println("섭씨를 입력하세요.");
@@ -24,13 +27,12 @@ public class Operator2 {
 
         } catch (InputMismatchException exception) {
             System.out.println("숫자를 입력하세요.");
-            fahrenheitToCelsius();
+            convertFahrenheitToCelsius();
         }
     }
 
-
+    // 2. 숫자일때만 TRUE 반환하기
     public static void checkNumber() {
-
 
         System.out.println("아무키나 입력하세요. ");
         boolean isNumber = false;
@@ -47,6 +49,7 @@ public class Operator2 {
 
     }
 
+    // 3. 대문자는 소문자로, 소문자는 대문자로 반환하기
     public static void convertAlphabetic() {
 
         System.out.println("단어 또는 문장을 입력하세요.");
@@ -83,7 +86,7 @@ public class Operator2 {
         try {
             switch (userQuestion) {
                 case 1 :
-                    fahrenheitToCelsius();
+                    convertFahrenheitToCelsius();
                     break;
                 case 2 :
                     checkNumber();

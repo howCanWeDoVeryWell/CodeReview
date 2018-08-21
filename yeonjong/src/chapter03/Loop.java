@@ -2,6 +2,8 @@ package chapter03;
 
 public class Loop {
 
+
+    // 1 ~ 20 중에 2배수 3배수 제외하고 합
     public static void sumMultiple() {
 
         int startNumber = 1;
@@ -20,6 +22,7 @@ public class Loop {
         System.out.println("sum" + sum);
     }
 
+    // 1 + 2 + 3 + ... + 10
     public static void sum1to10() {
 
         int startNumber = 1;
@@ -33,7 +36,8 @@ public class Loop {
         System.out.println("sum" + sum);
     }
 
-    public static void numberOfCases() {
+    // 주사위 2개 던져 합이 6인 경우의 수
+    public static void getNumberOfCases() {
 
         int [] blackDice = {1, 2, 3, 4, 5, 6};
         int [] whiteDice = {1, 2, 3, 4, 5, 6};
@@ -51,8 +55,9 @@ public class Loop {
     }
 
 
-    // 무한 급수
-    public static void infiniteSeries() {
+    // InfiniteSeries : 무한 급수
+    // 1 + (-2) + 3 + ...
+    public static void calculateInfiniteSeries() {
 
         int startNumber = 1;
         int currentNumber = 0;
@@ -75,8 +80,8 @@ public class Loop {
     }
 
     public static void main(String[] args) {
-        infiniteSeries();
-        numberOfCases();
+        calculateInfiniteSeries();
+        getNumberOfCases();
         sumMultiple();
         sum1to10();
     }
