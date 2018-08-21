@@ -5,13 +5,13 @@ import java.util.Scanner;
 class ConversionFahrenheitToCelsiusCalculator {
 	void CalculateFahrenheitToCelsius(Scanner scanner) {
 		while(true) {
-			Boolean isThatHundredsNumber = false;
+			Boolean isThatHundredsNumber = true;
 			String userInputNumber = scanner.nextLine();
 
 			CommonCalculatingExpression commonCalculatingExpression = new CommonCalculatingExpression();
 			isThatHundredsNumber = commonCalculatingExpression.doCalculate(userInputNumber, isThatHundredsNumber);
 
-			if(isThatHundredsNumber) {
+			if(!isThatHundredsNumber) {
 				System.out.print("잘못입력하셨습니다. 다시 입력해주세요 : ");
 			} else {
 				double stringConvertToInt = Double.parseDouble(userInputNumber);
