@@ -6,7 +6,7 @@ public class IdentifyNumber {
     public static void main(String[] args) {
 
 
-        long indentityNumber = 94122200000000L;
+        String indentityNumber = "941222-2222222";
         System.out.println(indentityNumber);
 
     }

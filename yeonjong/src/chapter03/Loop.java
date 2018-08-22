@@ -30,7 +30,7 @@ public class Loop {
         int sum = 0;
 
         for (int i = startNumber; i <= endNumber; i ++) {
-            sum = sum + i;
+            sum += i;
         }
         System.out.println("---- sum1to10 result ----");
         System.out.println("sum" + sum);
@@ -61,15 +61,13 @@ public class Loop {
 
         int startNumber = 1;
         int currentNumber = 0;
-        int MaxNumber = 100;
+        int maxNumber = 100;
 
         int loopCount = 0;
         int shift = 1;
 
-
-        while (currentNumber <= MaxNumber) {
-
-            currentNumber += startNumber;
+        while (currentNumber <= maxNumber) {
+            currentNumber = startNumber * shift;
             startNumber++;
             loopCount++;
             shift *= -1;

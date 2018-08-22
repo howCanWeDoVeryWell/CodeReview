@@ -46,21 +46,11 @@ public class Loop2 {
         }
     }
 
-    public static void fibonacci() {
-
-    }
-
-    public static void discrimination() {
-
-    }
 
 
     public static void main(String[] args) {
         calculateEquation();
         sumEach();
-        //fibonacci();
-        //discrimination();
-
     }
 
 
