@@ -114,11 +114,8 @@ public class Operator2 {
         for (int i = 0, size = compareChar.length; i < size; i++) {
             if (compareChar[i] >= ASCII_UPPER_CASE_A && compareChar[i] <= ASCII_UPPER_CASE_Z) {
                 compareChar[i] += ALPHABET_RANGE;
-                continue;
-            }
-            if (compareChar[i] >= ASCII_LOWER_CASE_A && compareChar[i] <= ASCII_LOWER_CASE_Z) {
+            } else if (compareChar[i] >= ASCII_LOWER_CASE_A && compareChar[i] <= ASCII_LOWER_CASE_Z) {
                 compareChar[i] -= ALPHABET_RANGE;
-                continue;
             }
         }
         return String.valueOf(compareChar);
