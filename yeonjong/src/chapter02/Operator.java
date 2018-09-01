@@ -8,10 +8,10 @@ import chapter02.common.UserInput;
 public class Operator {
 
     public void run() {
-        excute();
+        execute();
     }
 
-    private void excute() {
+    private void execute() {
         int count = 0;
         while (count++ < Loop.MAX_COUNT) {
             showMenu();

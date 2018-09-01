@@ -18,10 +18,10 @@ public class Operator2 {
     public static final double FAHRENHEIT_RESPONSE_TEMPERATURE = 1.8;
 
     public void run() {
-        excute();
+        execute();
     }
 
-    private void excute() {
+    private void execute() {
         int count = 0;
         while (count++ < Loop.MAX_COUNT) {
             showMenu();
