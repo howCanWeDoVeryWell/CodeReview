@@ -1,128 +1,112 @@
 package chapter02;
 
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import chapter02.constants.Loop;
+import chapter02.constants.Menu;
+import chapter02.common.UserInput;
 
 public class Operator2 {
-    public static final int QUESTION_ONE = 1;
-    public static final int QUESTION_TWO = 2;
-    public static final int QUESTION_THREE = 3;
-    public static final int QUESTION_FOUR = 4;
-    public static final int ASCII_UPPER_CASE_A = 65;
-    public static final int ASCII_UPPER_CASE_Z = 90;
-    public static final int ASCII_LOWER_CASE_A = 97;
-    public static final int ASCII_LOWER_CASE_Z = 122;
+
+    class ASCIICode {
+        private static final int UPPER_CASE_A = 65;
+        private static final int UPPER_CASE_Z = 90;
+        private static final int LOWER_CASE_A = 97;
+        private static final int LOWER_CASE_Z = 122;
+    }
+
     public static final int ALPHABET_RANGE = 32;
     public static final int FAHRENHEIT_START_TEMPERATURE = 32;
     public static final double FAHRENHEIT_RESPONSE_TEMPERATURE = 1.8;
 
     public void run() {
-        showMenu();
+        excute();
     }
+
+    private void excute() {
+        int count = 0;
+        while (count++ < Loop.MAX_COUNT) {
+            showMenu();
+            int userSelectMenu = UserInput.getUserInteger();
+            if (userSelectMenu == Loop.FINISH) {
+                return;
+            }
+            String questionType = checkQuestionTypeBy(userSelectMenu);
+            String userInputValue = null;
+            if (Menu.NUMBER_TYPE.equals(questionType)) {
+                userInputValue =  String.valueOf(UserInput.getUserInteger());
+            } else if (Menu.STRING_TYPE.equals(questionType)) {
+                userInputValue = UserInput.getUserInputString();
+            }
+            String result = executeQuestionBy(userSelectMenu, userInputValue);
+            System.out.println("[결과]" + result);
+        }
+        System.out.println("[프로그램을 종료합니다.]");
+    }
+
 
     public void showMenu() {
         System.out.println("1. 화씨를 섭씨로 반환하기 ");
         System.out.println("2. 숫자일때만 TRUE 반환하기");
         System.out.println("3. 대문자는 소문자로, 소문자는 대문자로 반환하기");
-        System.out.println("4. 종료");
-        try {
-            selectMenu();
-        } catch (InputMismatchException e) {
-            System.out.println("없는 문제 입니다. 다시 입력해주세요.");
-            showMenu();
+        System.out.println("100. 종료");
+    }
+
+    public String checkQuestionTypeBy(int userSelectMenu) {
+        switch (userSelectMenu) {
+            case Menu.ONE:
+                return Menu.NUMBER_TYPE;
+            case Menu.TWO:
+                return Menu.STRING_TYPE;
+            case Menu.THREE:
+                return Menu.STRING_TYPE;
+            default:
+                return null;
         }
     }
 
-    public void selectMenu() throws InputMismatchException {
-        Scanner sanner = new Scanner(System.in);
-        int questionNumber = sanner.nextInt();
-        checkQuestionNumber(questionNumber);
-    }
-
-    public void checkQuestionNumber(int questionNumber) {
-        if (questionNumber >= QUESTION_ONE && questionNumber <= QUESTION_THREE) {
-            try {
-                getUserInput(questionNumber);
-            } catch (InputMismatchException exception) {
-                System.out.println("없는 문제 입니다. 다시 입력해주세요.");
-                showMenu();
-            }
-        } else if (questionNumber == QUESTION_FOUR) {
-            System.out.println("프로그램 종료됩니다.");
-        } else {
-            System.out.println("없는 문제 입니다. 다시 입력해주세요.");
-            showMenu();
+    public String executeQuestionBy(int userSelectMenu, String userInputValue) {
+        switch (userSelectMenu) {
+            case Menu.ONE:
+                return convertFahrenheitToCelsius(userInputValue);
+            case Menu.TWO:
+                return checkNumber(userInputValue);
+            case Menu.THREE:
+                return convertAlphabetic(userInputValue);
+            default:
+                return null;
         }
-    }
-
-    public void getUserInput(int questionNumber) {
-        String userInputValue = scanUserInputValue();
-        getAnswerToQuestion(questionNumber, userInputValue);
-    }
-
-    public String scanUserInputValue() throws InputMismatchException {
-        System.out.println("값을 입력하세요.");
-        Scanner sanner = new Scanner(System.in);
-        return sanner.nextLine();
-    }
-
-    public void getAnswerToQuestion(int questionNumber, String userInputValue) {
-        String answer = null;
-        switch (questionNumber) {
-            case QUESTION_ONE:
-                try {
-                    int userInputNumber = Integer.parseInt(userInputValue);
-                    answer = String.valueOf(convertFahrenheitToCelsius(userInputNumber));
-                } catch (NumberFormatException exception) {
-                    System.out.println("숫자만 입력 가능합니다.");
-                    showMenu();
-                }
-                break;
-            case QUESTION_TWO:
-                answer = String.valueOf(checkNumber(userInputValue));
-                break;
-            case QUESTION_THREE:
-                answer = convertAlphabetic(userInputValue);
-                break;
-        }
-        System.out.println("[결과]" + answer);
     }
 
     // 1. 화씨를 섭씨로 반환하기
     // Fahrenheit : 화씨 , Celsius : 섭씨
-    public double convertFahrenheitToCelsius(int fahrenheit) {
-        return (fahrenheit - FAHRENHEIT_START_TEMPERATURE) / FAHRENHEIT_RESPONSE_TEMPERATURE;
+    public String convertFahrenheitToCelsius(String fahrenheit) {
+        return String.valueOf((Double.parseDouble(fahrenheit) - FAHRENHEIT_START_TEMPERATURE) / FAHRENHEIT_RESPONSE_TEMPERATURE);
     }
 
     // 2. 숫자일때만 TRUE 반환하기
-    public boolean checkNumber(String userInput) {
+    public String checkNumber(String userInput) {
         try {
             Double.parseDouble(userInput);
-            return true;
+            return "true";
         } catch (NumberFormatException exception) {
-            return false;
+            return "false";
         }
     }
 
     // 3. 대문자는 소문자로, 소문자는 대문자로 반환하기
     public String convertAlphabetic(String userInput) {
-        char[] compareChar = userInput.toCharArray();
-
-        for (int i = 0, size = compareChar.length; i < size; i++) {
-            if (compareChar[i] >= ASCII_UPPER_CASE_A && compareChar[i] <= ASCII_UPPER_CASE_Z) {
-                compareChar[i] += ALPHABET_RANGE;
-            } else if (compareChar[i] >= ASCII_LOWER_CASE_A && compareChar[i] <= ASCII_LOWER_CASE_Z) {
-                compareChar[i] -= ALPHABET_RANGE;
+        char [] chars = userInput.toCharArray();
+        for (int i = 0, size = chars.length; i < size; i++) {
+            char unit = chars[i];
+            if (unit >= ASCIICode.UPPER_CASE_A && unit <= ASCIICode.UPPER_CASE_Z) {
+                unit += ALPHABET_RANGE;
+            } else if (unit >= ASCIICode.LOWER_CASE_A && unit <= ASCIICode.LOWER_CASE_Z) {
+                unit -= ALPHABET_RANGE;
             }
         }
-        return String.valueOf(compareChar);
+        return String.valueOf(chars);
     }
 
     public static void main(String[] args) {
-        Operator2 operator = new Operator2();
-        operator.run();
+        new Operator2().run();
     }
 }

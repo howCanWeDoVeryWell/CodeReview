@@ -12,8 +12,8 @@ public class Loop {
     public static void sumMultiple() {
         int endNumber = 20;
         int sum = 0;
-        int[] number = new int[endNumber];
-        int[] disabledNumber = {DISABLED_NUMBER_TWO, DISABLED_NUMBER_THREE};
+        int [] number = new int[endNumber];
+        int [] disabledNumber = {DISABLED_NUMBER_TWO, DISABLED_NUMBER_THREE};
 
         for (int i = 0; i < endNumber; i++) {
             number[i] = i + 1;
@@ -54,8 +54,8 @@ public class Loop {
         int casesCount = 0;
         int conditionNumber = 6;
 
-        for (int i = 0, blackDiceSize = blackDice.length; i < blackDiceSize; i++) {
-            for (int j = 0, whiteDiceSize = whiteDice.length; j < whiteDiceSize; j++) {
+        for (int i = 0, blackDiceLength = blackDice.length; i < blackDiceLength; i++) {
+            for (int j = 0, whiteDiceLength = whiteDice.length; j < whiteDiceLength; j++) {
                 if (blackDice[i] + whiteDice[j] == conditionNumber) {
                     casesCount++;
                 }
@@ -84,7 +84,7 @@ public class Loop {
         System.out.println("LoopCount is " + loopCount);
     }
 
-    public static void main(String[] args) {
+    public static void main(String [] args) {
         calculateInfiniteSeries();
         getNumberOfCases();
         sumMultiple();
