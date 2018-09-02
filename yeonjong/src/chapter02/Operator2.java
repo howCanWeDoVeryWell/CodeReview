@@ -102,7 +102,6 @@ public class Operator2 {
     }
 
     // 3. 대문자는 소문자로, 소문자는 대문자로 반환하기
-    // NullPointerException
     private String convertAlphabetic(String userInput) {
         if (userInput != null) {
             char [] chars = userInput.toCharArray();

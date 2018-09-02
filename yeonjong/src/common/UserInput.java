@@ -6,7 +6,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInput {
-
     public static int getUserInteger() {
         int count = 0;
         while (count++ < Loop.MAX_COUNT) {
@@ -24,6 +23,4 @@ public class UserInput {
         System.out.println("아무키나 입력하세요.");
         return new Scanner(System.in).nextLine();
     }
-
-
 }
