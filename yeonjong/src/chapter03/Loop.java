@@ -1,35 +1,27 @@
 package chapter03;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 public class Loop {
     public static final int DISABLED_NUMBER_TWO = 2;
     public static final int DISABLED_NUMBER_THREE = 3;
 
     // 1 ~ 20 중에 2배수 3배수 제외하고 합
     public static void sumMultiple() {
+        int startNumber = 1;
         int endNumber = 20;
         int sum = 0;
-        int [] number = new int[endNumber];
         int [] disabledNumber = {DISABLED_NUMBER_TWO, DISABLED_NUMBER_THREE};
 
-        for (int i = 0; i < endNumber; i++) {
-            number[i] = i + 1;
-        }
-
-        for (int i = 0, sizeI = number.length; i < sizeI; i++) {
+        for (int i = startNumber; i <= endNumber; i++) {
+            int sumValue = i;
             for (int j = 0, sizeJ = disabledNumber.length; j < sizeJ; j++) {
-                if (number[i] % disabledNumber[j] == 0) {
-                    number[i] = 0;
+                if (i % disabledNumber[j] == 0) {
+                    sumValue = 0;
+                    break;
                 }
             }
+            sum += sumValue;
         }
 
-        for (int i = 0, size = number.length; i < size; i++) {
-            sum += number[i];
-        }
         System.out.println("---- sumMultiple result ----");
         System.out.println("sum" + sum);
     }

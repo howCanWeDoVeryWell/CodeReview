@@ -1,7 +1,6 @@
 package chapter03;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import common.UserInput;
 
 public class Loop2 {
     public static final int MAX_NUMBER = 10;
@@ -36,19 +35,9 @@ public class Loop2 {
         System.out.println("sum " + sum);
     }
 
-    public void getUserInputValue() throws InputMismatchException {
-        System.out.println("숫자를 입력하세요.");
-        Scanner scanAnswer = new Scanner(System.in);
-        sumEach(scanAnswer.nextInt());
-    }
-
     public static void main(String[] args) {
-        Loop2 loop2 = new Loop2();
-        loop2.calculateEquation();
-        try {
-            loop2.getUserInputValue();
-        } catch (InputMismatchException exception) {
-            System.out.println("숫자가 아니네요..");
-        }
+        new Loop2().calculateEquation();
+        int userInputNumber = UserInput.getUserInteger();
+        new Loop2().sumEach(userInputNumber);
     }
 }

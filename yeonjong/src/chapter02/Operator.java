@@ -3,7 +3,7 @@ package chapter02;
 
 import chapter02.constants.Loop;
 import chapter02.constants.Menu;
-import chapter02.common.UserInput;
+import common.UserInput;
 
 public class Operator {
 

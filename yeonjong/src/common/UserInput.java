@@ -1,4 +1,4 @@
-package chapter02.common;
+package common;
 
 import chapter02.constants.Loop;
 
