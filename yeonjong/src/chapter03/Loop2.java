@@ -24,12 +24,12 @@ public class Loop2 {
         System.out.println("count " + count);
     }
 
-    // 입력 받은 수 각각 더하기
+    // 입력 받은수의 자리수 각각 더하기
     public void sumEach(int userInputNumber) {
         int sum = 0;
         while (userInputNumber > 0) {
             sum += userInputNumber % DIVISION_NUMBER;
-            userInputNumber = userInputNumber / DIVISION_NUMBER;
+            userInputNumber /= DIVISION_NUMBER;
         }
         System.out.println("---- sumEach result ----");
         System.out.println("sum " + sum);
