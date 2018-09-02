@@ -21,7 +21,6 @@ public class UserInput {
     }
 
     public static String getUserInputString() {
-        // TODO 공백이면?
         System.out.println("아무키나 입력하세요.");
         return new Scanner(System.in).nextLine();
     }

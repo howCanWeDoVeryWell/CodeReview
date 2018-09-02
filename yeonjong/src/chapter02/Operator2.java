@@ -72,7 +72,7 @@ public class Operator2 {
             case Menu.THREE:
                 return convertAlphabetic(userInputValue);
             default:
-                return null;
+                return "없는 문제입니다.";
         }
     }
 
