@@ -102,6 +102,7 @@ public class Operator2 {
             } else if (unit >= ASCIICode.LOWER_CASE_A && unit <= ASCIICode.LOWER_CASE_Z) {
                 unit -= ALPHABET_RANGE;
             }
+            chars[i] = unit;
         }
         return String.valueOf(chars);
     }
