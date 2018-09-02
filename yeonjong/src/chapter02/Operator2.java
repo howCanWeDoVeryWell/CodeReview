@@ -29,7 +29,9 @@ public class Operator2 {
     private boolean execute() {
         showMenu();
         int userSelectMenu = UserInput.getUserInteger();
-        if (!isFinish(userSelectMenu)) {
+        if (isFinish(userSelectMenu)) {
+            return true;
+        } else {
             String questionType = checkQuestionTypeBy(userSelectMenu);
             String userInputValue = null;
             if (Menu.NUMBER_TYPE.equals(questionType)) {
@@ -41,7 +43,6 @@ public class Operator2 {
             System.out.println("[결과]" + result);
             return false;
         }
-        return true;
     }
 
     private void showMenu() {
@@ -52,11 +53,7 @@ public class Operator2 {
     }
 
     private boolean isFinish(int selectedMenu) {
-        if (selectedMenu == Loop.FINISH) {
-            return true;
-        } else {
-            return false;
-        }
+        return selectedMenu == Loop.FINISH;
     }
 
     private String checkQuestionTypeBy(int userSelectMenu) {

@@ -18,13 +18,14 @@ public class Operator {
     private boolean execute() {
         showMenu();
         int selectedMenu = UserInput.getUserInteger();
-        if (!isFinish(selectedMenu)) {
+        if (isFinish(selectedMenu)) {
+            return true;
+        } else {
             int userInputValue = UserInput.getUserInteger();
             String result = executeQuestionBy(selectedMenu, userInputValue);
             print(result);
             return false;
         }
-        return true;
     }
 
     private void showMenu() {
@@ -37,11 +38,7 @@ public class Operator {
     }
 
     private boolean isFinish(int selectedMenu) {
-        if (selectedMenu == Loop.FINISH) {
-            return true;
-        } else {
-            return false;
-        }
+        return selectedMenu == Loop.FINISH;
     }
 
     private String executeQuestionBy(int selectedMenu, int userInputValue) {

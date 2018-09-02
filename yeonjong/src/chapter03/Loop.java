@@ -19,7 +19,7 @@ public class Loop {
         for (int i = START_NUMBER; i <= END_NUMBER; i++) {
             int sumValue = i;
             for (Integer disabledNumber : DISABLED_LIST) {
-                if (i % disabledNumber != 0) {
+                if (i % disabledNumber == 0) {
                     sumValue = 0;
                 }
             }
