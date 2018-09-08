@@ -2,9 +2,6 @@ package chapter04;
 
 import common.UserInput;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 // 주어진 문자열이 숫자인지 판별하는 프로그램
 public class Discrimination {
     class ASCIICode {
