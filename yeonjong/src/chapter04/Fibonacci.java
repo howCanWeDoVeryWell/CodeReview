@@ -1,25 +1,33 @@
 package chapter04;
 
-//  0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-// 피보나치 수열의 10번째 항은 무엇일까요? 34
-// * 피보나치 수열이란 첫번째 항의 값이 0이고 두 번째 항의 값이 1일 때 이후의 항들은 이전의 두 항을 더한 값으로 만들어지는 수열을 말한다.
-// * 수열을 이루는 구성원을 수열의 항(term)이라고 한다.
-public class Fibonacci {
-    private void getTenTerm() {
-        int firstTerm = 0;
-        int secondTerm = 1;
-        int sum = 0;
-        int loop = 8;
+import common.Print;
+import common.UserInput;
 
-        for (int i = 0; i < loop; i++) {
-            sum = firstTerm + secondTerm;
-            firstTerm = secondTerm;
-            secondTerm = sum;
+// (0), 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987
+// 전달받은 번재의 항을 구한다
+// 재귀를 사용한다.
+
+public class Fibonacci {
+    private static int FIRST_NUMBER = 0;
+    private static int SECOND_NUMBER = 1;
+
+    private void run() {
+        int term = UserInput.getUserInteger();
+        int result = getTermBy(FIRST_NUMBER, SECOND_NUMBER, term);
+        Print.number(result);
+    }
+
+    public int getTermBy(int firstNumber, int secondNumber, int loop) {
+        --loop;
+        int result = firstNumber + secondNumber;
+        if (loop <= 1) {
+            return result;
+        } else {
+            return getTermBy(secondNumber, result, loop);
         }
-        System.out.println("[tenTerm]" + sum);
     }
 
     public static void main(String[] args) {
-        new Fibonacci().getTenTerm();
+        new Fibonacci().run();
     }
 }
