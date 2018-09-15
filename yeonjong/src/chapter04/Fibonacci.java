@@ -4,8 +4,8 @@ import common.Print;
 import common.UserInput;
 
 public class Fibonacci {
-    private static int FIRST_NUMBER = 0;
-    private static int SECOND_NUMBER = 1;
+    private static final int FIRST_NUMBER = 0;
+    private static final int SECOND_NUMBER = 1;
 
     private void run() {
         int term = UserInput.getUserInteger();
