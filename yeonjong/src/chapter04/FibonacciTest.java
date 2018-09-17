@@ -10,7 +10,7 @@ public class FibonacciTest {
     Fibonacci fibonacci = new Fibonacci();
 
     @Test
-    public void test() {
+    public void testGetTermBy() {
         assertEquals(1, fibonacci.getTermBy(0, 1, 1));
         assertEquals(1, fibonacci.getTermBy(0, 1, 2));
         assertEquals(2, fibonacci.getTermBy(0, 1, 3));

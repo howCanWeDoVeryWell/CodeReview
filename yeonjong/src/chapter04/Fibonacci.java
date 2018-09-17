@@ -8,9 +8,10 @@ public class Fibonacci {
     private static final int SECOND_NUMBER = 1;
 
     private void run() {
+        Print.characters("몇 번째 항의 값을 알고싶나요?");
         int term = UserInput.getUserInteger();
         int result = getTermBy(FIRST_NUMBER, SECOND_NUMBER, term);
-        Print.number(result);
+        Print.characters(String.valueOf(result));
     }
 
     public int getTermBy(int firstNumber, int secondNumber, int loop) {

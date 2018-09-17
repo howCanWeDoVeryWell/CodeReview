@@ -11,13 +11,17 @@ public class StringParser {
         private static final int NINE = 57;
     }
 
-    private void run() {
+    public void run() {
         String userInputValue = UserInput.getUserInputString();
-        boolean isNumber = analyzeString(userInputValue.toCharArray());
-        printResult(isNumber);
+        boolean isNumber = isNumbers(userInputValue.toCharArray());
+        if (isNumber) {
+            Print.characters("숫자입니다.");
+        } else {
+            Print.characters("숫자가 아니에요.");
+        }
     }
 
-    private boolean analyzeString(char [] characters) {
+    private boolean isNumbers(char [] characters) {
         boolean isNumber = false;
         for (char character : characters) {
             if (!isNumber(character)) {
@@ -31,14 +35,6 @@ public class StringParser {
 
     private boolean isNumber(char character) {
         return ASCIICode.ZERO <= character && ASCIICode.NINE >= character;
-    }
-
-    private void printResult(boolean isNumber) {
-        if (isNumber) {
-            Print.characters("숫자입니다.");
-        } else {
-            Print.characters("숫자가 아니에요.");
-        }
     }
 
     public static void main(String[] args) {
