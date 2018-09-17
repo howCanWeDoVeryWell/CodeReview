@@ -13,13 +13,13 @@ public class Multiples {
         this.maxNumber = maxNumber;
     }
     
-    public int getSumOfMultipleOfTwoNumbers(int firstNumber, int secondNumber) {
+    public int getMultipleSumBy(int firstNumber, int secondNumber) {
         Set<Integer> multipleSet = getResultMultipleValues(firstNumber, secondNumber);
         
         return multipleSet.stream().reduce((a, b) -> a + b).get();
     }
     
-    public Set<Integer> getResultMultipleValues(int... numbers) {
+    private Set<Integer> getResultMultipleValues(int... numbers) {
         Set<Integer> resultMultipleSet = new HashSet<>();
         Arrays.stream(numbers).forEach(number -> {
             if (number != 0) {
@@ -30,13 +30,5 @@ public class Multiples {
         });
         
         return resultMultipleSet;
-    }
-    
-    public int getMaxNumber() {
-        return this.maxNumber;
-    }
-    
-    public void setMaxNumber(int maxNumber) {
-        this.maxNumber = maxNumber;
     }
 }
