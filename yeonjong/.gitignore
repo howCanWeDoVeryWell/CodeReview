@@ -11,4 +11,5 @@ bin/
 out/
 lib/
 .log
+*.class
 *.iml

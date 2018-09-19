@@ -6,14 +6,9 @@ import common.UserInput;
 
 // 주어진 문자열이 숫자인지 판별하는 프로그램
 public class StringParser {
-    class ASCIICode {
-        private static final int ZERO = 48;
-        private static final int NINE = 57;
-    }
-
     public void run() {
         String userInputValue = UserInput.getUserInputString();
-        boolean isNumber = isNumbers(userInputValue.toCharArray());
+        boolean isNumber = isNumbers(userInputValue);
         if (isNumber) {
             Print.characters("숫자입니다.");
         } else {
@@ -21,20 +16,13 @@ public class StringParser {
         }
     }
 
-    private boolean isNumbers(char [] characters) {
-        boolean isNumber = false;
-        for (char character : characters) {
-            if (!isNumber(character)) {
-                return false;
-            } else {
-                isNumber = true;
-            }
+    private boolean isNumbers(String userInputValue) {
+        try {
+            Integer.parseInt(userInputValue);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
-        return isNumber;
-    }
-
-    private boolean isNumber(char character) {
-        return ASCIICode.ZERO <= character && ASCIICode.NINE >= character;
     }
 
     public static void main(String[] args) {
