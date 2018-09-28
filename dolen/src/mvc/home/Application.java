@@ -2,14 +2,20 @@ package mvc.home;
 
 import mvc.home.controller.Controller;
 import mvc.home.model.Model;
-import mvc.home.view.MainComponent;
-import mvc.home.view.TopComponent;
+import mvc.home.view.View;
 
 public class Application {
+    private View view;
+    private Model model;
+    private Controller controller;
+    
+    public Application () {
+        this.model = new Model();
+        this.view = new View(this.model.getData());
+        this.controller = new Controller(model, view);
+    }
+    
     public static void main(String[] args) {
-        Model model = new Model("This is initialization data but this data don't have to be String. The type of the object is much better.");
-        TopComponent topComponent = new TopComponent();
-        MainComponent mainComponent = new MainComponent();
-        new Controller(model, topComponent, mainComponent);
+        new Application();
     }
 }
