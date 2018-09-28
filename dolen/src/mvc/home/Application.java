@@ -1,9 +1,9 @@
-package home;
+package mvc.home;
 
-import home.controller.Controller;
-import home.model.Model;
-import home.view.MainComponent;
-import home.view.TopComponent;
+import mvc.home.controller.Controller;
+import mvc.home.model.Model;
+import mvc.home.view.MainComponent;
+import mvc.home.view.TopComponent;
 
 public class Application {
     public static void main(String[] args) {

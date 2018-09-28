@@ -1,8 +1,8 @@
-package home.controller;
+package mvc.home.controller;
 
-import home.model.Model;
-import home.view.MainComponent;
-import home.view.TopComponent;
+import mvc.home.model.Model;
+import mvc.home.view.MainComponent;
+import mvc.home.view.TopComponent;
 
 import java.awt.*;
 

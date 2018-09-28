@@ -1,6 +1,6 @@
-package home.view;
+package mvc.home.view;
 
-import home.model.Model;
+import mvc.home.model.Model;
 
 public class MainComponent {
     public void render (Model model) {

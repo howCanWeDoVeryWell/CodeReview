@@ -1,4 +1,4 @@
-package home.model;
+package mvc.home.model;
 
 public class Model {
     private String data;
