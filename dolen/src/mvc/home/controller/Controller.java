@@ -30,7 +30,14 @@ public class Controller implements ListSelectionListener {
     }
     
     private void removeMember (JList source) {
-        this.model.removeMember((String) source.getSelectedValue());
-        this.view.render(this.model.getData());
+        String selectedValue = (String) source.getSelectedValue();
+        if (selectedValue == null) {
+            return;
+        }
+        /**
+         * 여기에 옵저버 패턴을 적용하면 컨트롤러가 뷰를 갱신시키지 않아도 된다. 
+         */
+        this.model.removeMember(selectedValue);
+        this.view.render();
     }
 }
