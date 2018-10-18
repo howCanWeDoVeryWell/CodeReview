@@ -22,6 +22,7 @@ public class View extends JFrame {
         });
         this.list = new JList();
         this.add(new JScrollPane(this.list), "Center");
+        this.render();
         this.setVisible(true);
     }
     
