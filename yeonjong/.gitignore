@@ -1,0 +1,15 @@
+.idea/
+.recommenders/
+.metadata/
+RemoteSystemsTempFiles/
+.metadata/
+.settings
+.classpath
+.project
+.DS_Store
+bin/
+out/
+lib/
+.log
+*.class
+*.iml
