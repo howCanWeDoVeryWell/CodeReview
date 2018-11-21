@@ -16,17 +16,18 @@ public class FilterRenderer extends DefaultTableCellRenderer {
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (table.getValueAt(row, column) != null) {
+            System.out.println("?" + this.selected.size());
             int columnValue = (int) table.getValueAt(row, column);
-
-            this.selected.keySet().forEach(key -> {
-                if (key == columnValue) {
+            for (int i = 0; i < this.selected.size(); i++) {
+                if (this.selected.containsKey(columnValue)) {
                     c.setBackground(Color.RED);
                     setOpaque(true);
-                    return;
+                    return c;
                 } else {
                     setOpaque(false);
+                    return c;
                 }
-            });
+            }
         }
         return  c;
     }
