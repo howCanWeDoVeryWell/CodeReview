@@ -6,27 +6,27 @@ import java.awt.*;
 import java.util.Map;
 
 public class FilterRenderer extends DefaultTableCellRenderer {
-    private Map<Integer, String> selected;
+    private Map<Integer, String> schedules;
 
-    public FilterRenderer(Map<Integer, String> selected) {
-        this.selected = selected;
+    public FilterRenderer(Map<Integer, String> schedules) {
+        this.schedules = schedules;
     }
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        if (table.getValueAt(row, column) != null) {
-            int columnValue = (int) table.getValueAt(row, column);
-            for (int i = 0; i < this.selected.size(); i++) {
-                if (this.selected.containsKey(columnValue)) {
+        Integer date = (Integer) table.getValueAt(row, column);
+        if (date != null) {
+            this.schedules.entrySet().stream().forEach(schedule -> {
+                if (this.schedules.containsKey(date)) {
                     c.setBackground(Color.RED);
                     setOpaque(true);
-                    return c;
                 } else {
                     setOpaque(false);
-                    return c;
                 }
-            }
+            });
+        } else {
+            setOpaque(false);
         }
         return  c;
     }

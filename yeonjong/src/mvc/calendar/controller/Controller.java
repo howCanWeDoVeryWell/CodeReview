@@ -2,7 +2,6 @@ package mvc.calendar.controller;
 
 import mvc.calendar.model.Model;
 import mvc.calendar.view.View;
-
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -22,26 +21,27 @@ public class Controller extends MouseAdapter {
         if (o instanceof JTable) {
             this.onClickJTable(e);
         } else if (o instanceof JButton) {
-            this.onClickJButton(((JButton) o).getText());
+            this.onClickJButton(e);
         }
-
         this.view.render();
     }
 
     private void onClickJTable (MouseEvent e) {
         JTable table = (JTable) e.getSource();
-        int row = table.rowAtPoint(e.getPoint());
-        int column = table.columnAtPoint(e.getPoint());
-        int selectedDay = (int) table.getValueAt(row, column);
-        if (selectedDay != 0) {
-            String contents = JOptionPane.showInputDialog(selectedDay + "일의 일정을 입력해주세요 :p");
-            if (contents != null) {
-                this.model.addSchedules(selectedDay, contents);
-            }
+        int selectedDay = (int) table.getValueAt(table.rowAtPoint(e.getPoint()), table.columnAtPoint(e.getPoint()));
+        if (selectedDay == 0) {
+            return;
         }
+
+        String contents = JOptionPane.showInputDialog(selectedDay + "일의 일정을 입력해주세요 :p");
+        if (contents == null) {
+            return;
+        }
+        this.model.addSchedules(selectedDay, contents);
     }
 
-    private void onClickJButton(String buttonText) {
+    private void onClickJButton(MouseEvent e) {
+        String buttonText = ((JButton) e.getComponent()).getText();
         if (View.NEXT_BTN_TEXT.equals(buttonText)) {
             this.model.nextMonth();
         } else if (View.PREV_BTN_TEXT.equals(buttonText)) {

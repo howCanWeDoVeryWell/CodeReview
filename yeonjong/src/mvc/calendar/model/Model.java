@@ -7,7 +7,9 @@ public class Model {
     public Map<Integer, Map<Integer, Map<Integer, String>>> schedules = new HashMap<>();
 
     public Calendar getCalendar() {
-        return this.calendar;
+        Calendar cal = Calendar.getInstance();
+        cal.set(this.calendar.get(Calendar.YEAR), this.calendar.get(Calendar.MONTH), this.calendar.get(Calendar.DATE));
+        return cal;
     }
 
     public void nextMonth() {
@@ -18,21 +20,19 @@ public class Model {
         this.calendar.add(Calendar.MONTH, -1);
     }
 
-
     public void addSchedules(int selectedDay, String contents) {
+        Integer year = this.calendar.get(Calendar.YEAR);
+        Integer month = this.calendar.get(Calendar.MONTH) + 1;
 
-        if (this.schedules.get(this.calendar.get(Calendar.YEAR)) == null) {
-            this.schedules.put(this.calendar.get(Calendar.YEAR), new HashMap<>());
+        Map<Integer, Map<Integer, String>> yearMap = this.schedules.get(year);
+        if (yearMap == null) {
+            this.schedules.put(year, new HashMap<>());
         }
 
-        if (this.schedules.get(this.calendar.get(Calendar.YEAR))
-                .get(this.calendar.get(Calendar.MONTH) + 1) == null) {
-            this.schedules.get(this.calendar.get(Calendar.YEAR))
-                    .put(this.calendar.get(Calendar.MONTH) + 1, new HashMap<>());
+        Map<Integer, String> monthMap = this.schedules.get(year).get(month);
+        if (monthMap == null) {
+            this.schedules.get(year).put(month, new HashMap<>());
         }
-
-        this.schedules.get(this.calendar.get(Calendar.YEAR))
-                .get(this.calendar.get(Calendar.MONTH) + 1)
-                .put(selectedDay, contents);
+        this.schedules.get(year).get(month).put(selectedDay, contents);
     }
 }
