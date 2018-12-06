@@ -21,9 +21,8 @@ public class Model {
     }
 
     public void addSchedules(int selectedDay, String contents) {
-        Integer year = this.calendar.get(Calendar.YEAR);
-        Integer month = this.calendar.get(Calendar.MONTH) + 1;
-
+        int year = this.calendar.get(Calendar.YEAR);
+        int month = this.calendar.get(Calendar.MONTH) + 1;
         Map<Integer, Map<Integer, String>> yearMap = this.schedules.get(year);
         if (yearMap == null) {
             this.schedules.put(year, new HashMap<>());

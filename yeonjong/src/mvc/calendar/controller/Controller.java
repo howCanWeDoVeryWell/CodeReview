@@ -2,6 +2,8 @@ package mvc.calendar.controller;
 
 import mvc.calendar.model.Model;
 import mvc.calendar.view.View;
+
+import javax.print.DocFlavor;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -23,7 +25,6 @@ public class Controller extends MouseAdapter {
         } else if (o instanceof JButton) {
             this.onClickJButton(e);
         }
-        this.view.render();
     }
 
     private void onClickJTable (MouseEvent e) {
@@ -34,18 +35,22 @@ public class Controller extends MouseAdapter {
         }
 
         String contents = JOptionPane.showInputDialog(selectedDay + "일의 일정을 입력해주세요 :p");
-        if (contents == null) {
+        if (contents == null || contents.replaceAll("\\p{Space}", "").isEmpty()) {
             return;
         }
         this.model.addSchedules(selectedDay, contents);
+        this.view.render();
     }
 
     private void onClickJButton(MouseEvent e) {
-        String buttonText = ((JButton) e.getComponent()).getText();
-        if (View.NEXT_BTN_TEXT.equals(buttonText)) {
-            this.model.nextMonth();
-        } else if (View.PREV_BTN_TEXT.equals(buttonText)) {
-            this.model.previousMonth();
+        switch (View.Buttons.valueOf(((JButton) e.getComponent()).getText())) {
+            case NEXT:
+                this.model.nextMonth();
+                break;
+            case PREV:
+                this.model.previousMonth();
+                break;
         }
+        this.view.render();
     }
 }

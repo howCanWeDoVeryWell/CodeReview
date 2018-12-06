@@ -14,12 +14,13 @@ public class FilterRenderer extends DefaultTableCellRenderer {
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+        Component component = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         Integer date = (Integer) table.getValueAt(row, column);
+
         if (date != null) {
             this.schedules.entrySet().stream().forEach(schedule -> {
                 if (this.schedules.containsKey(date)) {
-                    c.setBackground(Color.RED);
+                    component.setBackground(Color.RED);
                     setOpaque(true);
                 } else {
                     setOpaque(false);
@@ -28,6 +29,6 @@ public class FilterRenderer extends DefaultTableCellRenderer {
         } else {
             setOpaque(false);
         }
-        return  c;
+        return component;
     }
 }

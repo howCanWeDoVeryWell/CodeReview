@@ -4,6 +4,7 @@ import mvc.calendar.model.Model;
 import mvc.calendar.util.FilterRenderer;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.util.*;
@@ -11,9 +12,8 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class View extends JFrame {
-    private enum DayOfTheWeek {SUN, MON, TUE, WED, THUR, FRI, SAT}
-    public static final String PREV_BTN_TEXT = "<";
-    public static final String NEXT_BTN_TEXT = ">";
+    private enum DayOfTheWeek {SUN, MON, TUE, WED, THUR, FRI, SAT};
+    public enum Buttons {PREV,  NEXT};
     private final int WEEK = 6;
     private Model model;
     private JLabel calendarTitle;
@@ -38,8 +38,8 @@ public class View extends JFrame {
         panel.setLayout(new BorderLayout());
         this.calendarTitle = new JLabel();
         this.calendarTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        this.preBtn = new JButton(PREV_BTN_TEXT);
-        this.nextBtn = new JButton(NEXT_BTN_TEXT);
+        this.preBtn = new JButton(Buttons.PREV.toString());
+        this.nextBtn = new JButton(Buttons.NEXT.toString());
         this.defaultTableModel = new DefaultTableModel() {
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -73,9 +73,9 @@ public class View extends JFrame {
         this.defaultTableModel.setRowCount(0);
 
         IntStream.range(0, this.WEEK).forEach(i -> {
+            List<Integer> list = new ArrayList<>();
             int startWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1;
             int lastDate = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-            List<Integer> list = new ArrayList<>();
             int dayOfTheWeek = DayOfTheWeek.values().length;
 
             IntStream.range(0, dayOfTheWeek).forEach(j -> {
@@ -83,23 +83,31 @@ public class View extends JFrame {
                 if (i == 0 && j < startWeek || date > lastDate) {
                     list.add(null);
                 } else {
-                    Map<Integer, Map<Integer, String>> yearMap = this.model.schedules.get(year);
-                    this.model.schedules.entrySet().forEach(item -> {
-                        Map<Integer, String> schedule = new HashMap<>();
-                        if (yearMap != null && yearMap.get(month) != null) {
-                            yearMap.get(month).keySet().forEach(key -> {
-                                schedule.put(key, yearMap.get(month).get(key));
-                            });
-                        }
-                        IntStream.range(0, this.table.getColumnModel().getColumnCount()).forEach(column -> {
-                            this.table.getColumnModel().getColumn(column).setCellRenderer(new FilterRenderer(schedule));
-                        });
-                    });
+                    this.setSchedules(this.model.schedules.get(year), month);
                     list.add(date);
                 }
             });
             this.defaultTableModel.addRow(list.toArray());
         });
         this.add(this.pane, BorderLayout.CENTER);
+    }
+
+    private void setSchedules(Map<Integer, Map<Integer, String>> monthMap, int month) {
+        this.model.schedules.entrySet().forEach(item -> {
+            Map<Integer, String> schedule = new HashMap<>();
+            if (monthMap != null && monthMap.get(month) != null) {
+                monthMap.get(month).keySet().forEach(key -> {
+                    schedule.put(key, monthMap.get(month).get(key));
+                });
+            }
+            this.setCellFilter(schedule);
+        });
+    }
+
+    private void setCellFilter(Map<Integer, String> schedule) {
+        TableColumnModel tableColumnModel = this.table.getColumnModel();
+        IntStream.range(0, tableColumnModel.getColumnCount()).forEach(column -> {
+            tableColumnModel.getColumn(column).setCellRenderer(new FilterRenderer(schedule));
+        });
     }
 }
