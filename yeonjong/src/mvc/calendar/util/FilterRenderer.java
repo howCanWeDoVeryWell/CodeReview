@@ -18,13 +18,10 @@ public class FilterRenderer extends DefaultTableCellRenderer {
         Integer date = (Integer) table.getValueAt(row, column);
 
         if (date != null) {
-            this.schedules.entrySet().stream().forEach(schedule -> {
-                if (this.schedules.containsKey(date)) {
-                    component.setBackground(Color.RED);
-                    setOpaque(true);
-                } else {
-                    setOpaque(false);
-                }
+            setOpaque(false);
+            this.schedules.entrySet().stream().filter(schedule -> (this.schedules.containsKey(date))).forEach(schedule -> {
+                component.setBackground(Color.RED);
+                setOpaque(true);
             });
         } else {
             setOpaque(false);

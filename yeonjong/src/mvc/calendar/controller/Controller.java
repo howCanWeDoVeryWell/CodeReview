@@ -35,7 +35,7 @@ public class Controller extends MouseAdapter {
         }
 
         String contents = JOptionPane.showInputDialog(selectedDay + "일의 일정을 입력해주세요 :p");
-        if (contents == null || contents.replaceAll("\\p{Space}", "").isEmpty()) {
+        if (contents.trim().isEmpty()) {
             return;
         }
         this.model.addSchedules(selectedDay, contents);
