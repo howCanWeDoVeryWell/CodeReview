@@ -5,4 +5,9 @@ public class View3 implements Observer {
     public void update(String message) {
         System.out.println("View3: " + message);
     }
+
+    @Override
+    public void update(String event, String message) {
+
+    }
 }
